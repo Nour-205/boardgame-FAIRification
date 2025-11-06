@@ -1,0 +1,537 @@
+@prefix bg: <https://w3id.org/FAIR-course-UT/2025-2026/group6/ont#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+bg:Domain a owl:Class ;
+    rdfs:label "Domain" ;
+    rdfs:comment "A thematic or conceptual category for board games." ;
+    rdfs:subClassOf skos:Concept .
+
+bg:bggRank a owl:DatatypeProperty ;
+    rdfs:label "bggRank" ;
+    rdfs:comment "BoardGameGeek rank." ;
+    rdfs:domain bg:BoardGame ;
+    rdfs:range xsd:integer .
+
+bg:complexityAverage a owl:DatatypeProperty ;
+    rdfs:label "complexityAverage" ;
+    rdfs:comment "Average complexity rating." ;
+    rdfs:domain bg:Ratings ;
+    rdfs:range xsd:decimal .
+
+bg:hasDomain a owl:ObjectProperty ;
+    rdfs:label "hasDomain" ;
+    rdfs:comment "Relates a board game to one or more domains (as concepts)." ;
+    rdfs:domain bg:BoardGame ;
+    rdfs:range skos:Concept .
+
+bg:hasMechanic a owl:ObjectProperty ;
+    rdfs:label "hasMechanic" ;
+    rdfs:comment "Relates a board game to one or more mechanics (as concepts)." ;
+    rdfs:domain bg:BoardGame ;
+    rdfs:range skos:Concept .
+
+bg:hasRatings a owl:ObjectProperty ;
+    rdfs:label "hasRatings" ;
+    rdfs:comment "Links a board game to its ratings information." ;
+    rdfs:domain bg:BoardGame ;
+    rdfs:range bg:Ratings .
+
+bg:hasStats a owl:ObjectProperty ;
+    rdfs:label "hasStats" ;
+    rdfs:comment "Links a board game to its statistical information." ;
+    rdfs:domain bg:BoardGame ;
+    rdfs:range bg:Stats .
+
+bg:maxPlayers a owl:DatatypeProperty ;
+    rdfs:label "maxPlayers" ;
+    rdfs:comment "Maximum number of players." ;
+    rdfs:domain bg:Stats ;
+    rdfs:range xsd:integer .
+
+bg:domain_strategy_games a bg:Domain ;
+    rdfs:label "Strategy Games"@en ;
+    rdfs:comment "Games emphasizing planning, tactics, and decision-making over luck."@en .
+
+bg:domain_thematic_games a bg:Domain ;
+    rdfs:label "Thematic Games"@en ;
+    rdfs:comment "Games focused on storytelling or strong thematic immersion."@en .
+
+bg:domain_family_games a bg:Domain ;
+    rdfs:label "Family Games"@en ;
+    rdfs:comment "Games designed to be accessible and enjoyable for families and casual play."@en .
+
+bg:domain_party_games a bg:Domain ;
+    rdfs:label "Party Games"@en ;
+    rdfs:comment "Games designed for larger groups, emphasizing social interaction and humor."@en .
+
+bg:domain_war_games a bg:Domain ;
+    rdfs:label "War Games"@en ;
+    rdfs:comment "Games that simulate military conflict or historical battles."@en .
+
+bg:domain_abstract_games a bg:Domain ;
+    rdfs:label "Abstract Games"@en ;
+    rdfs:comment "Games with minimal theme, focusing on pure mechanics and logic."@en .
+
+bg:domain_children_games a bg:Domain ;
+    rdfs:label "Children's Games"@en ;
+    rdfs:comment "Games primarily designed for young players, focusing on simple mechanics."@en .
+
+bg:domain_customizable_games a bg:Domain ;
+    rdfs:label "Customizable Games"@en ;
+    rdfs:comment "Games that involve constructing or modifying components, decks, or armies before play."@en .
+
+bg:mechanic_action_event a bg:Mechanic ;
+    rdfs:label "Action Event" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_action_points a bg:Mechanic ;
+    rdfs:label "Action Points" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_action_retrieval a bg:Mechanic ;
+    rdfs:label "Action Retrieval" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_advantage_token a bg:Mechanic ;
+    rdfs:label "Advantage Token" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_area a bg:Mechanic ;
+    rdfs:label "Area" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_area_majority___influence a bg:Mechanic ;
+    rdfs:label "Area Majority   Influence" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_auction_bidding a bg:Mechanic ;
+    rdfs:label "Auction Bidding" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_auction_dutch a bg:Mechanic ;
+    rdfs:label "Auction Dutch" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_auction_english a bg:Mechanic ;
+    rdfs:label "Auction English" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_auction_sealed_bid a bg:Mechanic ;
+    rdfs:label "Auction Sealed Bid" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_automatic_resource_growth a bg:Mechanic ;
+    rdfs:label "Automatic Resource Growth" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_bias a bg:Mechanic ;
+    rdfs:label "Bias" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_bingo a bg:Mechanic ;
+    rdfs:label "Bingo" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_campaign___battle_card_driven a bg:Mechanic ;
+    rdfs:label "Campaign   Battle Card Driven" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_card_drafting a bg:Mechanic ;
+    rdfs:label "Card Drafting" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_catch_the_leader a bg:Mechanic ;
+    rdfs:label "Catch The Leader" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_chit a bg:Mechanic ;
+    rdfs:label "Chit" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_closed_economy_auction a bg:Mechanic ;
+    rdfs:label "Closed Economy Auction" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_commodity_speculation a bg:Mechanic ;
+    rdfs:label "Commodity Speculation" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_connections a bg:Mechanic ;
+    rdfs:label "Connections" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_contracts a bg:Mechanic ;
+    rdfs:label "Contracts" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_crayon_rail_system a bg:Mechanic ;
+    rdfs:label "Crayon Rail System" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_cube_tower a bg:Mechanic ;
+    rdfs:label "Cube Tower" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_deck_bag_and_pool_building a bg:Mechanic ;
+    rdfs:label "Deck Bag And Pool Building" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_delayed_purchase a bg:Mechanic ;
+    rdfs:label "Delayed Purchase" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_die_icon_resolution a bg:Mechanic ;
+    rdfs:label "Die Icon Resolution" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_different_worker_types a bg:Mechanic ;
+    rdfs:label "Different Worker Types" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_drafting a bg:Mechanic ;
+    rdfs:label "Drafting" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_enclosure a bg:Mechanic ;
+    rdfs:label "Enclosure" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_events a bg:Mechanic ;
+    rdfs:label "Events" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_flicking a bg:Mechanic ;
+    rdfs:label "Flicking" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_force_commitment a bg:Mechanic ;
+    rdfs:label "Force Commitment" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_grid_movement a bg:Mechanic ;
+    rdfs:label "Grid Movement" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_hexagon_grid a bg:Mechanic ;
+    rdfs:label "Hexagon Grid" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_hidden_roles a bg:Mechanic ;
+    rdfs:label "Hidden Roles" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_highest a bg:Mechanic ;
+    rdfs:label "Highest" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_i_cut_you_choose a bg:Mechanic ;
+    rdfs:label "I Cut You Choose" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_income a bg:Mechanic ;
+    rdfs:label "Income" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_induction a bg:Mechanic ;
+    rdfs:label "Induction" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_investment a bg:Mechanic ;
+    rdfs:label "Investment" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_king_of_the_hill a bg:Mechanic ;
+    rdfs:label "King Of The Hill" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_layering a bg:Mechanic ;
+    rdfs:label "Layering" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_line_drawing a bg:Mechanic ;
+    rdfs:label "Line Drawing" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_loans a bg:Mechanic ;
+    rdfs:label "Loans" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_mancala a bg:Mechanic ;
+    rdfs:label "Mancala" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_map_deformation a bg:Mechanic ;
+    rdfs:label "Map Deformation" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_market a bg:Mechanic ;
+    rdfs:label "Market" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_measurement_movement a bg:Mechanic ;
+    rdfs:label "Measurement Movement" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_memory a bg:Mechanic ;
+    rdfs:label "Memory" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_modular_board a bg:Mechanic ;
+    rdfs:label "Modular Board" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_movement_points a bg:Mechanic ;
+    rdfs:label "Movement Points" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_moving_multiple_units a bg:Mechanic ;
+    rdfs:label "Moving Multiple Units" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_multiple a bg:Mechanic ;
+    rdfs:label "Multiple" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_multiple_maps a bg:Mechanic ;
+    rdfs:label "Multiple Maps" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_negotiation a bg:Mechanic ;
+    rdfs:label "Negotiation" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_network_and_route_building a bg:Mechanic ;
+    rdfs:label "Network And Route Building" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_paper a bg:Mechanic ;
+    rdfs:label "Paper" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_pattern_building a bg:Mechanic ;
+    rdfs:label "Pattern Building" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_pattern_recognition a bg:Mechanic ;
+    rdfs:label "Pattern Recognition" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_pick a bg:Mechanic ;
+    rdfs:label "Pick" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_player_elimination a bg:Mechanic ;
+    rdfs:label "Player Elimination" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_point_to_point_movement a bg:Mechanic ;
+    rdfs:label "Point To Point Movement" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_prisoner a bg:Mechanic ;
+    rdfs:label "Prisoner" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_push_your_luck a bg:Mechanic ;
+    rdfs:label "Push Your Luck" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_race a bg:Mechanic ;
+    rdfs:label "Race" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_ratio___combat_results_table a bg:Mechanic ;
+    rdfs:label "Ratio   Combat Results Table" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_real a bg:Mechanic ;
+    rdfs:label "Real" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_rock a bg:Mechanic ;
+    rdfs:label "Rock" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_roles_with_asymmetric_information a bg:Mechanic ;
+    rdfs:label "Roles With Asymmetric Information" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_rondel a bg:Mechanic ;
+    rdfs:label "Rondel" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_score a bg:Mechanic ;
+    rdfs:label "Score" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_selection_order_bid a bg:Mechanic ;
+    rdfs:label "Selection Order Bid" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_set_collection a bg:Mechanic ;
+    rdfs:label "Set Collection" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_simultaneous_action_selection a bg:Mechanic ;
+    rdfs:label "Simultaneous Action Selection" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_single_loser_game a bg:Mechanic ;
+    rdfs:label "Single Loser Game" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_slide_push a bg:Mechanic ;
+    rdfs:label "Slide Push" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_solo___solitaire_game a bg:Mechanic ;
+    rdfs:label "Solo   Solitaire Game" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_stacking_and_balancing a bg:Mechanic ;
+    rdfs:label "Stacking And Balancing" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_static_capture a bg:Mechanic ;
+    rdfs:label "Static Capture" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_storytelling a bg:Mechanic ;
+    rdfs:label "Storytelling" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_targeted_clues a bg:Mechanic ;
+    rdfs:label "Targeted Clues" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_tech_trees___tech_tracks a bg:Mechanic ;
+    rdfs:label "Tech Trees   Tech Tracks" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_tile_placement a bg:Mechanic ;
+    rdfs:label "Tile Placement" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_time_track a bg:Mechanic ;
+    rdfs:label "Time Track" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_trading a bg:Mechanic ;
+    rdfs:label "Trading" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_trick a bg:Mechanic ;
+    rdfs:label "Trick" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_turn_order_auction a bg:Mechanic ;
+    rdfs:label "Turn Order Auction" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_turn_order_pass_order a bg:Mechanic ;
+    rdfs:label "Turn Order Pass Order" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_turn_order_random a bg:Mechanic ;
+    rdfs:label "Turn Order Random" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_turn_order_stat a bg:Mechanic ;
+    rdfs:label "Turn Order Stat" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_variable_phase_order a bg:Mechanic ;
+    rdfs:label "Variable Phase Order" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_variable_set a bg:Mechanic ;
+    rdfs:label "Variable Set" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_voting a bg:Mechanic ;
+    rdfs:label "Voting" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_worker_placement_with_dice_workers a bg:Mechanic ;
+    rdfs:label "Worker Placement With Dice Workers" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:mechanic_zone_of_control a bg:Mechanic ;
+    rdfs:label "Zone Of Control" ;
+    rdfs:comment "Locally defined mechanic not present in the official BGG list." .
+
+bg:minAge a owl:DatatypeProperty ;
+    rdfs:label "minAge" ;
+    rdfs:comment "Minimum recommended age." ;
+    rdfs:domain bg:Stats ;
+    rdfs:range xsd:integer .
+
+bg:minPlayers a owl:DatatypeProperty ;
+    rdfs:label "minPlayers" ;
+    rdfs:comment "Minimum number of players." ;
+    rdfs:domain bg:Stats ;
+    rdfs:range xsd:integer .
+
+bg:name a owl:DatatypeProperty ;
+    rdfs:label "name" ;
+    rdfs:comment "Name of the board game." ;
+    rdfs:domain bg:BoardGame ;
+    rdfs:range xsd:string .
+
+bg:ownedUsers a owl:DatatypeProperty ;
+    rdfs:label "ownedUsers" ;
+    rdfs:comment "Number of users owning the game." ;
+    rdfs:domain bg:BoardGame ;
+    rdfs:range xsd:integer .
+
+bg:playTime a owl:DatatypeProperty ;
+    rdfs:label "playTime" ;
+    rdfs:comment "Typical play time in minutes." ;
+    rdfs:domain bg:Stats ;
+    rdfs:range xsd:integer .
+
+bg:ratingAverage a owl:DatatypeProperty ;
+    rdfs:label "ratingAverage" ;
+    rdfs:comment "Average user rating." ;
+    rdfs:domain bg:Ratings ;
+    rdfs:range xsd:decimal .
+
+bg:usersRated a owl:DatatypeProperty ;
+    rdfs:label "usersRated" ;
+    rdfs:comment "Number of users who rated the game." ;
+    rdfs:domain bg:Ratings ;
+    rdfs:range xsd:integer .
+
+bg:yearPublished a owl:DatatypeProperty ;
+    rdfs:label "yearPublished" ;
+    rdfs:comment "Year the board game was published." ;
+    rdfs:domain bg:BoardGame ;
+    rdfs:range xsd:gYear .
+
+bg:Ratings a owl:Class ;
+    rdfs:label "Ratings" ;
+    rdfs:comment "Ratings information such as number of users rated, average rating and complexity." .
+
+bg:Stats a owl:Class ;
+    rdfs:label "Stats" ;
+    rdfs:comment "Statistics such as number of players, play time, and minimum age." .
+
+bg:BoardGame a owl:Class ;
+    rdfs:label "BoardGame" ;
+    rdfs:comment "A tabletop game involving strategy, chance, or both." ;
+    rdfs:subClassOf schema:Game .
+
+bg:Mechanic a owl:Class ;
+    rdfs:label "Mechanic" ;
+    rdfs:comment "A game mechanism or method by which the game is played." ;
+    rdfs:subClassOf skos:Concept .
+

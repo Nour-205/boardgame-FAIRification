@@ -1,0 +1,50 @@
+@prefix bg: <https://w3id.org/FAIR-course-UT/2025-2026/group6/ont#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+
+
+bg:catalog a dcat:Catalog ;
+    dct:description "Catalog of board game dataset and its distributions" ;
+    dct:publisher [ a foaf:Organization ;
+            foaf:name "FAIR Data Engineering Team" ] ;
+    dct:title "Board Game Catalog" ;
+    dcat:dataset bg:dataset .
+
+bg:dataset a dcat:Dataset ;
+    dct:creator [ a foaf:Organization ;
+            foaf:name "BoardGameGeek" ] ;
+    dct:description "FAIRified version of the BoardGameGeek dataset, including information about board games, their mechanics, domains, players, play time and ratings." ;
+    dct:issued "2025-11-05"^^xsd:date ;
+    dct:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:modified "2025-11-05"^^xsd:date ;
+    dct:publisher [ a foaf:Organization ;
+            foaf:name "FAIR Data Engineering Team" ] ;
+    dct:title "Board GameGeek dataset (FAIRified)" ;
+    dcat:distribution bg:distOriginal,
+        bg:distRDF ;
+    dcat:keyword "FAIR",
+        "board game",
+        "dataset" .
+
+bg:distOriginal a dcat:Distribution ;
+    dct:description "Original board game dataset downloaded in Excel format." ;
+    dct:format "XLSX" ;
+    dct:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:title "BoardGameGeek Original Dataset" ;
+    dcat:downloadURL <https://example.com/BGG_Data_Set.xlsx> ;
+    dcat:mediaType "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" .
+
+bg:distRDF a dcat:Distribution ;
+    dct:conformsTo bg:BoardGame ;
+    dct:description "FAIRified dataset in RDF Turtle format." ;
+    dct:format "Turtle" ;
+    dct:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:title "BoardGameGeek RDF Dataset" ;
+    dcat:downloadURL <https://example.com/boardgame_dataset.ttl> ;
+    dcat:mediaType "text/turtle" .
+
