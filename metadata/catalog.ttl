@@ -4,13 +4,51 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix ldp: <http://www.w3.org/ns/ldp#> .
 
-<http://localhost:8080/profile/a0949e72-4466-4d53-8900-9436d1049a4b> a <http://www.w3.org/ns/dx/prof/Profile>;
-  <http://www.w3.org/2000/01/rdf-schema#label> "Catalog Profile";
-  <http://www.w3.org/ns/dx/prof/isProfileOf> <http://localhost:8080/profile/core>;
-  <http://www.w3.org/ns/dx/prof/hasResource> [ a <http://www.w3.org/ns/dx/prof/#ResourceDescriptor>;
-      <http://www.w3.org/2000/01/rdf-schema#label> "Catalog";
-      dcterms:format <https://w3id.org/mediatype/text/turtle>;
-      dcterms:conformsTo <https://www.w3.org/TR/shacl/>;
-      <http://www.w3.org/ns/dx/prof/hasRole> <http://www.w3.org/ns/dx/prof/role/Validation>;
-      <http://www.w3.org/ns/dx/prof/hasArtifact> <http://localhost:8080/metadata-schemas/2aa7ba63-d27a-4c0e-bfa6-3a4e250f4660>
-    ] .
+<http://localhost:8080/catalog/5c95bb6b-3475-4cbe-b57e-b4c9065badfa> a dcat:Resource,
+    dcat:Catalog;
+  <http://www.w3.org/2000/01/rdf-schema#label> "BoardGame Catalog";
+  dcterms:title "BoardGame Catalog";
+  dcat:version "1.0";
+  <https://w3id.org/fdp/fdp-o#metadataIssued> "2025-11-06T16:03:50.747340901Z"^^xsd:dateTime;
+  <https://w3id.org/fdp/fdp-o#metadataModified> "2025-11-07T10:31:00.304098013Z"^^xsd:dateTime;
+  dcterms:license <http://purl.org/NET/rdflicense/cc-zero1.0>;
+  dcterms:description "Catalog for the FAIRified BoardGameGeek dataset created by Group 6 .";
+  dcterms:language <http://id.loc.gov/vocabulary/iso639-1/en>;
+  <https://w3id.org/fdp/fdp-o#metadataIdentifier> <http://localhost:8080/catalog/5c95bb6b-3475-4cbe-b57e-b4c9065badfa#identifier>;
+  dcterms:accessRights <http://localhost:8080/catalog/5c95bb6b-3475-4cbe-b57e-b4c9065badfa#accessRights>;
+  dcterms:publisher [ a foaf:Agent;
+      foaf:name "Group 6 â€“ FAIR Data Engineering (2024-2025)"
+    ];
+  dcterms:isPartOf <http://localhost:8080>;
+  <http://semanticscience.org/resource/SIO_000628> <http://localhost:8080/catalog/5c95bb6b-3475-4cbe-b57e-b4c9065badfa/metrics/445c0a70d1e214e545b261559e2842f4>,
+    <http://localhost:8080/catalog/5c95bb6b-3475-4cbe-b57e-b4c9065badfa/metrics/5d27e854a9e78eb3f663331cd47cdc13>;
+  dcterms:issued "2025-11-06T16:03:50.747340901Z"^^xsd:dateTime;
+  dcterms:modified "2025-11-06T16:03:50.747340901Z"^^xsd:dateTime;
+  dcat:dataset <http://localhost:8080/dataset/5f4014b5-79ce-47d8-ba18-18f606bf9ba6>;
+  dcat:themeTaxonomy <https://www.wikidata.org/entity/Q11410>;
+  dcterms:conformsTo <http://localhost:8080/profile/a0949e72-4466-4d53-8900-9436d1049a4b> .
+
+<http://localhost:8080/catalog/5c95bb6b-3475-4cbe-b57e-b4c9065badfa#identifier> a
+    <http://purl.org/spar/datacite/Identifier>;
+  dcterms:identifier "http://localhost:8080/catalog/5c95bb6b-3475-4cbe-b57e-b4c9065badfa" .
+
+<http://localhost:8080/catalog/5c95bb6b-3475-4cbe-b57e-b4c9065badfa#accessRights>
+  a dcterms:RightsStatement;
+  dcterms:description "This resource has no access restriction" .
+
+<http://localhost:8080/catalog/5c95bb6b-3475-4cbe-b57e-b4c9065badfa/metrics/445c0a70d1e214e545b261559e2842f4>
+  <http://semanticscience.org/resource/SIO_000628> <https://www.ietf.org/rfc/rfc3986.txt>;
+  <http://semanticscience.org/resource/SIO_000332> <https://www.ietf.org/rfc/rfc3986.txt> .
+
+<http://localhost:8080/catalog/5c95bb6b-3475-4cbe-b57e-b4c9065badfa/metrics/5d27e854a9e78eb3f663331cd47cdc13>
+  <http://semanticscience.org/resource/SIO_000628> <https://www.wikidata.org/wiki/Q8777>;
+  <http://semanticscience.org/resource/SIO_000332> <https://www.wikidata.org/wiki/Q8777> .
+
+<http://localhost:8080/dataset/> a ldp:DirectContainer;
+  dcterms:title "Datasets";
+  ldp:membershipResource <http://localhost:8080/catalog/5c95bb6b-3475-4cbe-b57e-b4c9065badfa>;
+  ldp:hasMemberRelation dcat:dataset;
+  ldp:contains <http://localhost:8080/dataset/5f4014b5-79ce-47d8-ba18-18f606bf9ba6> .
+
+<http://localhost:8080/profile/a0949e72-4466-4d53-8900-9436d1049a4b> <http://www.w3.org/2000/01/rdf-schema#label>
+    "Catalog Profile" .

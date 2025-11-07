@@ -7,7 +7,6 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
 
-@prefix ex: <https://w3id.org/FAIR-course-UT/2024-2025/group1/shapes#> .
 
 ex:DatasetShape a sh:NodeShape ;
     sh:property [ sh:datatype xsd:string ;

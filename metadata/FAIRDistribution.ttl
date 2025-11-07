@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ldp: <http://www.w3.org/ns/ldp#> .
+
+<http://localhost:8080/distribution/2e312616-4457-49c8-b5ca-8101dc572b7f> a dcat:Resource,
+    dcat:Distribution;
+  <http://www.w3.org/2000/01/rdf-schema#label> "BoardGame FAIRified RDF";
+  dcterms:title "BoardGame FAIRified RDF";
+  dcat:version "1.0";
+  <https://w3id.org/fdp/fdp-o#metadataIssued> "2025-11-06T16:56:56.43523501Z"^^xsd:dateTime;
+  <https://w3id.org/fdp/fdp-o#metadataModified> "2025-11-06T16:59:50.736577337Z"^^xsd:dateTime;
+  dcterms:license <https://creativecommons.org/licenses/by/4.0/>;
+  dcterms:description """FAIRified RDF version of the BoardGame dataset, serialized in Turtle format according to the ontology defined by Group 6 (https://w3id.org/FAIR-course-UT/2024-2025/group6/ont#
+).""";
+  dcterms:conformsTo <http://localhost:8080/profile/02c649de-c579-43bb-b470-306abdc808c7>,
+    <http://localhost:8080/profile/02c649de-c579-43bb-b470-306abdc808c7>;
+  dcterms:language <http://id.loc.gov/vocabulary/iso639-1/en>;
+  <https://w3id.org/fdp/fdp-o#metadataIdentifier> <http://localhost:8080/distribution/2e312616-4457-49c8-b5ca-8101dc572b7f#identifier>;
+  dcterms:accessRights <http://localhost:8080/distribution/2e312616-4457-49c8-b5ca-8101dc572b7f#accessRights>;
+  dcterms:publisher [ a foaf:Agent;
+      foaf:name "Group 6 â€“ FAIR Data Engineering (2024â€“2025)"
+    ];
+  dcterms:isPartOf <http://localhost:8080/dataset/5f4014b5-79ce-47d8-ba18-18f606bf9ba6>;
+  <http://semanticscience.org/resource/SIO_000628> <http://localhost:8080/distribution/2e312616-4457-49c8-b5ca-8101dc572b7f/metrics/445c0a70d1e214e545b261559e2842f4>,
+    <http://localhost:8080/distribution/2e312616-4457-49c8-b5ca-8101dc572b7f/metrics/5d27e854a9e78eb3f663331cd47cdc13>;
+  dcterms:issued "2025-11-05T23:00:00Z"^^xsd:dateTime;
+  dcat:accessURL <https://w3id.org/FAIR-course-UT/2025-2026/group6/data>;
+  dcat:downloadURL <https://w3id.org/FAIR-course-UT/2025-2026/group6/data>;
+  dcat:mediaType "RDF";
+  dcat:format "ttl" .
+
+<http://localhost:8080/distribution/2e312616-4457-49c8-b5ca-8101dc572b7f#identifier>
+  a <http://purl.org/spar/datacite/Identifier>;
+  dcterms:identifier "http://localhost:8080/distribution/2e312616-4457-49c8-b5ca-8101dc572b7f" .
+
+<http://localhost:8080/distribution/2e312616-4457-49c8-b5ca-8101dc572b7f#accessRights>
+  a dcterms:RightsStatement;
+  dcterms:description "This resource has no access restriction" .
+
+<http://localhost:8080/profile/02c649de-c579-43bb-b470-306abdc808c7> <http://www.w3.org/2000/01/rdf-schema#label>
+    "Distribution Profile", "Distribution Profile" .
+
+<http://localhost:8080/distribution/2e312616-4457-49c8-b5ca-8101dc572b7f/metrics/445c0a70d1e214e545b261559e2842f4>
+  <http://semanticscience.org/resource/SIO_000628> <https://www.ietf.org/rfc/rfc3986.txt>;
+  <http://semanticscience.org/resource/SIO_000332> <https://www.ietf.org/rfc/rfc3986.txt> .
+
+<http://localhost:8080/distribution/2e312616-4457-49c8-b5ca-8101dc572b7f/metrics/5d27e854a9e78eb3f663331cd47cdc13>
+  <http://semanticscience.org/resource/SIO_000628> <https://www.wikidata.org/wiki/Q8777>;
+  <http://semanticscience.org/resource/SIO_000332> <https://www.wikidata.org/wiki/Q8777> .

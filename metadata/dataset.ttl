@@ -4,13 +4,53 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix ldp: <http://www.w3.org/ns/ldp#> .
 
-<http://localhost:8080/profile/2f08228e-1789-40f8-84cd-28e3288c3604> a <http://www.w3.org/ns/dx/prof/Profile>;
-  <http://www.w3.org/2000/01/rdf-schema#label> "Dataset Profile";
-  <http://www.w3.org/ns/dx/prof/isProfileOf> <http://localhost:8080/profile/core>;
-  <http://www.w3.org/ns/dx/prof/hasResource> [ a <http://www.w3.org/ns/dx/prof/#ResourceDescriptor>;
-      <http://www.w3.org/2000/01/rdf-schema#label> "Dataset";
-      dcterms:format <https://w3id.org/mediatype/text/turtle>;
-      dcterms:conformsTo <https://www.w3.org/TR/shacl/>;
-      <http://www.w3.org/ns/dx/prof/hasRole> <http://www.w3.org/ns/dx/prof/role/Validation>;
-      <http://www.w3.org/ns/dx/prof/hasArtifact> <http://localhost:8080/metadata-schemas/866d7fb8-5982-4215-9c7c-18d0ed1bd5f3>
-    ] .
+<http://localhost:8080/dataset/5f4014b5-79ce-47d8-ba18-18f606bf9ba6> a dcat:Resource,
+    dcat:Dataset;
+  <http://www.w3.org/2000/01/rdf-schema#label> "BoardGame Dataset";
+  dcterms:title "BoardGame Dataset";
+  dcat:version "1.0";
+  <https://w3id.org/fdp/fdp-o#metadataIssued> "2025-11-06T16:21:55.219780622Z"^^xsd:dateTime;
+  <https://w3id.org/fdp/fdp-o#metadataModified> "2025-11-07T10:31:00.195100894Z"^^xsd:dateTime;
+  dcterms:license <https://creativecommons.org/licenses/by/4.0/>;
+  dcterms:description "FAIRified version of the BoardGameGeek data containing information on board games, mechanics, domains, and statistics.";
+  dcterms:language <http://id.loc.gov/vocabulary/iso639-1/en>;
+  <https://w3id.org/fdp/fdp-o#metadataIdentifier> <http://localhost:8080/dataset/5f4014b5-79ce-47d8-ba18-18f606bf9ba6#identifier>;
+  dcterms:accessRights <http://localhost:8080/dataset/5f4014b5-79ce-47d8-ba18-18f606bf9ba6#accessRights>;
+  dcterms:publisher [ a foaf:Agent;
+      foaf:name "BoardGameGeek / Group 6 FAIRification"
+    ];
+  dcterms:isPartOf <http://localhost:8080/catalog/5c95bb6b-3475-4cbe-b57e-b4c9065badfa>;
+  <http://semanticscience.org/resource/SIO_000628> <http://localhost:8080/dataset/5f4014b5-79ce-47d8-ba18-18f606bf9ba6/metrics/445c0a70d1e214e545b261559e2842f4>,
+    <http://localhost:8080/dataset/5f4014b5-79ce-47d8-ba18-18f606bf9ba6/metrics/5d27e854a9e78eb3f663331cd47cdc13>;
+  dcterms:issued "2021-01-31T23:00:00Z"^^xsd:dateTime;
+  dcterms:modified "2025-11-05T23:00:00Z"^^xsd:dateTime;
+  dcat:theme <https://www.wikidata.org/entity/Q11410>;
+  dcat:distribution <http://localhost:8080/distribution/2e312616-4457-49c8-b5ca-8101dc572b7f>,
+    <http://localhost:8080/distribution/f56040fe-494f-4349-8702-5692fb31f4a8>;
+  dcterms:conformsTo <http://localhost:8080/profile/2f08228e-1789-40f8-84cd-28e3288c3604> .
+
+<http://localhost:8080/dataset/5f4014b5-79ce-47d8-ba18-18f606bf9ba6#identifier> a
+    <http://purl.org/spar/datacite/Identifier>;
+  dcterms:identifier "http://localhost:8080/dataset/5f4014b5-79ce-47d8-ba18-18f606bf9ba6" .
+
+<http://localhost:8080/dataset/5f4014b5-79ce-47d8-ba18-18f606bf9ba6#accessRights>
+  a dcterms:RightsStatement;
+  dcterms:description "This resource has no access restriction" .
+
+<http://localhost:8080/dataset/5f4014b5-79ce-47d8-ba18-18f606bf9ba6/metrics/445c0a70d1e214e545b261559e2842f4>
+  <http://semanticscience.org/resource/SIO_000628> <https://www.ietf.org/rfc/rfc3986.txt>;
+  <http://semanticscience.org/resource/SIO_000332> <https://www.ietf.org/rfc/rfc3986.txt> .
+
+<http://localhost:8080/dataset/5f4014b5-79ce-47d8-ba18-18f606bf9ba6/metrics/5d27e854a9e78eb3f663331cd47cdc13>
+  <http://semanticscience.org/resource/SIO_000628> <https://www.wikidata.org/wiki/Q8777>;
+  <http://semanticscience.org/resource/SIO_000332> <https://www.wikidata.org/wiki/Q8777> .
+
+<http://localhost:8080/distribution/> a ldp:DirectContainer;
+  dcterms:title "Distributions";
+  ldp:membershipResource <http://localhost:8080/dataset/5f4014b5-79ce-47d8-ba18-18f606bf9ba6>;
+  ldp:hasMemberRelation dcat:distribution;
+  ldp:contains <http://localhost:8080/distribution/2e312616-4457-49c8-b5ca-8101dc572b7f>,
+    <http://localhost:8080/distribution/f56040fe-494f-4349-8702-5692fb31f4a8> .
+
+<http://localhost:8080/profile/2f08228e-1789-40f8-84cd-28e3288c3604> <http://www.w3.org/2000/01/rdf-schema#label>
+    "Dataset Profile" .
